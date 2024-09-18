@@ -1,10 +1,16 @@
 # errm
 
-> Package `errm` is wrapper on [eris](https://github.com/rotisserie/eris) for convinient usage of errors with structrual fields and stack trace
+[![GoDoc][doc-img]][doc]
+
+Package `errm` is wrapper on [eris](https://github.com/rotisserie/eris) for convinient usage of errors with structrual fields and stack trace
 
 Install: `go get github.com/maxbolgarin/errm`
 
-## Why
+- [Why you should try](#why-you-should-try)
+- [How to use](#how-to-use)
+- [Contributing](#contributing)
+
+## Why you should try
 
 There are familiar methods like `New`, `Errorf`, `Wrap` and others that works as expected. But there are two breaking futures:
 
@@ -23,7 +29,7 @@ err1 := fmt.Errorf("cannot start server '%s' at address: %s: %w", name, addr, er
 err2 := errm.Wrap(err, "cannot start", "server", name, "address", addr)
 ```
 
-## Examples
+## How to use
 
 
 ### New error
@@ -96,3 +102,13 @@ errSet.Add(errm.Wrap(notFoundErr, "another error"))
 fmt.Println(errSet.Len()) // 3
 
 ```
+
+## Contributing
+
+If you'd like to contribute to `errm`, make a fork and submit a pull request!
+
+Released under the [MIT License]
+
+[MIT License]: LICENSE.txt
+[doc-img]: https://pkg.go.dev/badge/github.com/maxbolgarin/errm
+[doc]: https://pkg.go.dev/github.com/maxbolgarin/errm
