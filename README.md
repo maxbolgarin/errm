@@ -1,6 +1,6 @@
 # errm
 
-[![GoDoc][doc-img]][doc]
+[![GoDoc][doc-img]][doc] [![Build][ci-img]][ci] [![GoReport][report-img]][report]
 
 Package `errm` is wrapper on [eris](https://github.com/rotisserie/eris) for convinient usage of errors with structrual fields and stack trace
 
@@ -112,3 +112,7 @@ Released under the [MIT License]
 [MIT License]: LICENSE.txt
 [doc-img]: https://pkg.go.dev/badge/github.com/maxbolgarin/errm
 [doc]: https://pkg.go.dev/github.com/maxbolgarin/errm
+[ci-img]: https://github.com/maxbolgarin/errm/actions/workflows/go.yaml/badge.svg
+[ci]: https://github.com/maxbolgarin/errm/actions
+[report-img]: https://goreportcard.com/badge/github.com/maxbolgarin/errm
+[report]: https://goreportcard.com/report/github.com/maxbolgarin/errm
