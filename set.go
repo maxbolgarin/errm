@@ -92,7 +92,7 @@ func (e *Set) Empty() bool {
 
 // Clear removes an underlying map of errors.
 func (e *Set) Clear() {
-	e.errs = nil
+	e.errs = make(map[string]error)
 }
 
 // Len returns the number of errors in [Set].

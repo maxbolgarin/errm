@@ -214,6 +214,8 @@ func TestIsSet(t *testing.T) {
 	f1 := func() error {
 		s := errm.NewSet()
 		s.Add(err)
+		s.Clear()
+		s.Add(err)
 		return s.Err()
 	}
 	if !errm.Is(f1(), err) {
