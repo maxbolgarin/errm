@@ -27,6 +27,16 @@ func (e errorImpl) String() string {
 	return e.Error()
 }
 
+// StackForLogger returns slice ["stack", "[...]"] that can be used as fields for logger if you want to log stack trace.
+func (e errorImpl) StackForLogger() []any {
+	jsonErr := ToJSON(e.err)
+	root, ok := jsonErr["root"].(map[string]any)
+	if !ok {
+		return nil
+	}
+	return []any{"stack", root["stack"]}
+}
+
 // Format is used to handle %+v in formatted print, that will print stack trace.
 func (e errorImpl) Format(s fmt.State, verb rune) {
 	var withTrace bool
